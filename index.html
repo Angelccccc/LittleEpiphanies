@@ -1,42 +1,45 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Simple Blog</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="A minimal blog with simple fonts, white background, and dated posts." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Little Epiphanies</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Because what is life without of a little bit of reflection and fun." />
 </head>
+
 <body>
-  <header class="site-header">
-    <h1>My Simple Blog</h1>
-    <p class="tagline">notes & small epiphanies</p>
-  </header>
+    <header class="site-header">
+        <h1>Little Epiphanies</h1>
+        <p class="tagline">small epiphanies & notes & stories</p>
+    </header>
 
-  <main class="container">
-    <h2>Posts</h2>
-    <ul class="post-list">
-      <!-- Add new posts here (newest first) -->
-      <li>
-        <a href="posts/2025-08-27.html">
-          <time datetime="2025-08-27">Aug 27, 2025</time> — A tiny first post
-        </a>
-      </li>
-      <li>
-        <a href="posts/2025-08-20.html">
-          <time datetime="2025-08-20">Aug 20, 2025</time> — Hello world
-        </a>
-      </li>
-    </ul>
-  </main>
+    <main class="container">
+        <h2>Posts</h2>
+        <ul class="post-list">
+            <!-- Add new posts here (newest first) -->
+            <li>
+                <a href="posts/2025-08-27.html">
+                    <time datetime="2025-08-27">Aug 27, 2025</time> — A tiny first post
+                </a>
+            </li>
+            <li>
+                <a href="posts/2025-08-20.html">
+                    <time datetime="2025-08-20">Aug 20, 2025</time> — Hello world
+                </a>
+            </li>
+        </ul>
+    </main>
 
-  <footer class="site-footer container">
-    <small>© <span id="year"></span> Me</small>
-  </footer>
+    <footer class="site-footer container">
+        <small>© <span id="year"></span> Me</small>
+    </footer>
 
-  <script>
-    // tiny nicety: current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <script>
+        // tiny nicety: current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
