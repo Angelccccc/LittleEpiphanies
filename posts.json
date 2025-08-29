@@ -1,17 +1,17 @@
 [
-  {
+    {
     "title": "A tiny first post",
     "date": "2025-08-27",
-    "path": "posts/2025/08/2025-08-27.html"
+    "path": "posts/blog/2025/08/2025-08-27.html"
   },
   {
     "title": "Hello world",
     "date": "2025-08-20",
-    "path": "posts/2025/08/2025-08-20.html"
+    "path": "posts/blog/2025/08/2025-08-20.html"
   },
   {
     "title": "another month",
     "date": "2025-09-01",
-    "path": "posts/2025/09/2025-09-01.html"
+    "path": "posts/blog/2025/09/2025-09-01.html"
   }
 ]

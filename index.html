@@ -11,6 +11,14 @@
     <meta name="description" content="Because what is life without a little bit of reflection and fun." />
 </head>
 
+<script>
+  document.addEventListener('keydown', (e) => {
+    if (/input|textarea|select/i.test(e.target.tagName)) return;
+    if (e.key.toLowerCase() === 's') location.href = 'stories.html';
+    if (e.key.toLowerCase() === 'p') location.href = 'prayers.html';
+  });
+</script>
+
 <body>
     <header class="site-header">
         <h1>little epiphanies</h1>
@@ -25,11 +33,11 @@
             here is an answer: i've always wanted to make a website. it is a must as an engineer.
         </p>
         <p class="lede">
-             here is a closer answer: i've always wanted to start a blog. it just seems like a fun idea.
+            here is a closer answer: i've always wanted to start a blog. it just seems like a fun idea.
         </p>
         <p class="lede">
-            here is a closer answer: i feel that little epiphanies are a part of life. they come to us in the most
-            unexpected moments: they can be fun, they can be nuances, they can change your entire outlook on life. so
+            here is an even closer answer: i feel that little epiphanies are a part of life. they come to us in the most
+            unexpected moments: they can be fun, they can be nuanced, they can change your entire outlook on life. so
             wouldn't they be fun to share.
         </p>
         <p class="lede">
@@ -39,9 +47,19 @@
             way your mind works. yet we are social creatures forever seeking to be seen and understood. some try with
             words, some try with writing, some try with art. this is my attempt to bridge that gap.
         </p>
-              
+
         <h2>epiphanies</h2>
         <div id="archive"></div>
+
+        <div class="gem" aria-label="hidden menu">
+            <button class="gem-btn" aria-haspopup="true" aria-label="Open hidden links">✧</button>
+            <nav class="gem-menu" aria-label="Hidden links">
+                <a href="stories.html">stories</a>
+                <a href="prayers.html">prayers</a>
+            </nav>
+        </div>
+
+
     </main>
 
 

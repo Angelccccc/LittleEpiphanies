@@ -45,3 +45,27 @@ p  { margin: 0.75rem 0; }
 blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--line); color: var(--muted); }
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
 pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-radius: 6px; overflow: auto; }
+
+/* Hidden-gem menu */
+.gem { position: relative; display: inline-block; margin-left: 6px; }
+.gem-btn {
+  background: none; border: 0; padding: 2px 6px; cursor: pointer;
+  color: var(--muted); opacity: .45; border-radius: 8px; font: inherit;
+}
+.gem-btn:hover, .gem-btn:focus { opacity: .95; outline: 1px dashed var(--line); }
+
+.gem-menu {
+  position: absolute; top: 1.9em; right: 0;
+  background: #fff; border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  border-radius: 12px; padding: 8px 10px;
+  display: flex; flex-direction: column; gap: 6px;
+  opacity: 0; pointer-events: none; transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+.gem:hover .gem-menu, .gem:focus-within .gem-menu {
+  opacity: 1; pointer-events: auto; transform: translateY(0);
+}
+.gem-menu a { text-decoration: none; color: inherit; font-size: .95rem; padding: 2px 4px; }
+.gem-menu a:hover, .gem-menu a:focus { text-decoration: underline; }
+

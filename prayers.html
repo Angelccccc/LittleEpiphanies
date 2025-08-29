@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>prayers — little epiphanies</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta name="description" content="Prayers from little epiphanies." />
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" style="text-decoration:none;color:inherit;">little epiphanies</a></h1>
+    <p class="tagline">prayers</p>
+  </header>
+
+  <main class="container">
+    <ul id="prayer-list" class="post-list"></ul>
+  </main>
+
+  <footer class="site-footer container">
+    <small>© <span id="year"></span> Me</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (async function () {
+      const res = await fetch('prayers.json', { cache: 'no-store' });
+      const items = await res.json();
+
+      items.sort((a,b) => b.date.localeCompare(a.date));
+      const ul = document.getElementById('prayer-list');
+      ul.innerHTML = items.map(p => {
+        const [y,m,d] = p.date.split('-').map(Number);
+        const pretty = new Date(y, m-1, d).toLocaleDateString(undefined, {month:'short', day:'2-digit', year:'numeric'});
+        return `<li><a href="${p.path}">${pretty} — ${p.title}</a></li>`;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
