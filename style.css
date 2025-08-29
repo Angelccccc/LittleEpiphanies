@@ -69,12 +69,6 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 .gem-menu a { text-decoration: none; color: inherit; font-size: .95rem; padding: 2px 4px; }
 .gem-menu a:hover, .gem-menu a:focus { text-decoration: underline; }
 
-/* If the gem is in the HEADER (top), open downward */
-.header .gem .gem-menu { top: 1.9em; right: 0; }
-
-/* OPTION A: floating bottom-right */
-.gem-fixed { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-.gem-fixed .gem-menu { bottom: 2.1em; right: 0; top: auto; }
 
 /* OPTION B: tucked inside the FOOTER */
 .site-footer { position: relative; }
