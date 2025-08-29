@@ -18,6 +18,24 @@
     <ul id="story-list" class="post-list"></ul>
   </main>
 
+  <footer class="site-footer container">
+    <small>© <span id="year"></span> Me</small>
+  </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (async function () {
+      const res = await fetch('stories.json', { cache: 'no-store' });
+      const items = await res.json();
+
+      items.sort((a,b) => b.date.localeCompare(a.date));
+      const ul = document.getElementById('story-list');
+      ul.innerHTML = items.map(s => {
+        const [y,m,d] = s.date.split('-').map(Number);
+        const pretty = new Date(y, m-1, d).toLocaleDateString(undefined, {month:'short', day:'2-digit', year:'numeric'});
+        return `<li><a href="${s.path}">${pretty} — ${s.title}</a></li>`;
+      }).join('');
+    })();
+  </script>
 </body>
 </html>
