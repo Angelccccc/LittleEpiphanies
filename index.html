@@ -12,11 +12,11 @@
 </head>
 
 <script>
-  document.addEventListener('keydown', (e) => {
-    if (/input|textarea|select/i.test(e.target.tagName)) return;
-    if (e.key.toLowerCase() === 's') location.href = 'stories.html';
-    if (e.key.toLowerCase() === 'p') location.href = 'prayers.html';
-  });
+    document.addEventListener('keydown', (e) => {
+        if (/input|textarea|select/i.test(e.target.tagName)) return;
+        if (e.key.toLowerCase() === 's') location.href = 'stories.html';
+        if (e.key.toLowerCase() === 'p') location.href = 'prayers.html';
+    });
 </script>
 
 <body>
@@ -24,6 +24,14 @@
         <h1>little epiphanies</h1>
         <p class="tagline">notes & small epiphanies</p>
     </header>
+
+    <div class="gem" aria-label="hidden menu">
+        <button class="gem-btn" aria-haspopup="true" aria-label="Open hidden links">✧</button>
+        <nav class="gem-menu" aria-label="Hidden links">
+            <a href="stories.html">stories</a>
+            <a href="prayers.html">prayers</a>
+        </nav>
+    </div>
 
     <main class="container">
         <p class="lede">
@@ -51,13 +59,7 @@
         <h2>epiphanies</h2>
         <div id="archive"></div>
 
-        <div class="gem" aria-label="hidden menu">
-            <button class="gem-btn" aria-haspopup="true" aria-label="Open hidden links">✧</button>
-            <nav class="gem-menu" aria-label="Hidden links">
-                <a href="stories.html">stories</a>
-                <a href="prayers.html">prayers</a>
-            </nav>
-        </div>
+
 
 
     </main>
