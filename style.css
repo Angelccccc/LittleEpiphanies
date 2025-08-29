@@ -46,8 +46,8 @@ blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--li
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
 pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-radius: 6px; overflow: auto; }
 
-/* Hidden-gem menu */
-.gem { position: relative; display: inline-block; margin-left: 6px; }
+/* Base hidden-gem styles (keep these) */
+.gem { position: relative; display: inline-block; }
 .gem-btn {
   background: none; border: 0; padding: 2px 6px; cursor: pointer;
   color: var(--muted); opacity: .45; border-radius: 8px; font: inherit;
@@ -55,7 +55,7 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 .gem-btn:hover, .gem-btn:focus { opacity: .95; outline: 1px dashed var(--line); }
 
 .gem-menu {
-  position: absolute; top: 1.9em; right: 0;
+  position: absolute;
   background: #fff; border: 1px solid var(--line);
   box-shadow: 0 8px 30px rgba(0,0,0,.08);
   border-radius: 12px; padding: 8px 10px;
@@ -69,3 +69,16 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 .gem-menu a { text-decoration: none; color: inherit; font-size: .95rem; padding: 2px 4px; }
 .gem-menu a:hover, .gem-menu a:focus { text-decoration: underline; }
 
+/* If the gem is in the HEADER (top), open downward */
+.header .gem .gem-menu { top: 1.9em; right: 0; }
+
+/* OPTION A: floating bottom-right */
+.gem-fixed { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+.gem-fixed .gem-menu { bottom: 2.1em; right: 0; top: auto; }
+
+/* OPTION B: tucked inside the FOOTER */
+.site-footer { position: relative; }
+.gem-footer { position: absolute; right: 12px; bottom: 12px; }
+.gem-footer .gem-menu { bottom: 2.1em; right: 0; top: auto; }
+
+@media (max-width: 480px) { .gem-fixed { bottom: 12px; right: 12px; } }
