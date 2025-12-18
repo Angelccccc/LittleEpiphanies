@@ -99,20 +99,24 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 }
 
 /* subtle separator between links */
+/* subtle separator between links (doesn't affect underline length) */
 .top-nav a + a{
   position: relative;
-  padding-left: 1.25rem;
+  margin-left: 1.25rem;   /* space outside the link */
+  padding-left: 0;        /* IMPORTANT: no extra width inside the underline */
 }
+
 .top-nav a + a::before{
   content: "";
   position: absolute;
-  left: 0.55rem;
+  left: -0.65rem;         /* place separator in the margin gap */
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
   height: 1.05em;
   background: #ddd;
 }
+
 
 .top-nav a:hover{
   color: #111;
