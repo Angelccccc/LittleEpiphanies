@@ -2,122 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>little epiphanies</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@600&display=swap"
-        rel="stylesheet">
-    <meta name="description" content="Because what is life without a little bit of reflection and fun." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>little epiphanies</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
+  <meta name="description" content="Because what is life without a little bit of reflection and fun." />
 </head>
 
-<script>
-    document.addEventListener('keydown', (e) => {
-        if (/input|textarea|select/i.test(e.target.tagName)) return;
-        if (e.key.toLowerCase() === 's') location.href = 'stories.html';
-        if (e.key.toLowerCase() === 'p') location.href = 'prayers.html';
-    });
-</script>
-
 <body>
-    <header class="site-header">
-        <h1>little epiphanies</h1>
-        <p class="tagline">notes & small epiphanies</p>
-    </header>
+  <header class="site-header">
+    <h1>little epiphanies</h1>
+    <p class="tagline">notes & small epiphanies</p>
 
+    <!-- Visible page switcher -->
+    <nav class="top-nav" aria-label="Page switcher">
+      <a href="index.html" class="active" aria-current="page">epiphanies</a>
+      <a href="prayers.html">prayers</a>
+    </nav>
+  </header>
 
-    <main class="container">
-        <p class="lede">
-            so let's start with the question why?
-        </p>
-        <p class="lede">
-            here is an answer: i've always wanted to make a website. it is a must as an engineer.
-        </p>
-        <p class="lede">
-            here is a closer answer: i've always wanted to start a blog. it just seems like a fun idea.
-        </p>
-        <p class="lede">
-            here is an even closer answer: i feel that little epiphanies are a part of life. they come to us in the most
-            unexpected moments: they can be fun, they can be nuanced, they can change your entire outlook on life. so
-            wouldn't they be fun to share.
-        </p>
-        <p class="lede">
-            here is the closest answer: there are times in my life where I am hit with existential dread. it's the
-            moments when those you'd assume would understand don't and you realize how alone you are in the grand scheme
-            of the world. if you think about it, no one will every truly understand your feelings, your thoughts, the
-            way your mind works. yet we are social creatures forever seeking to be seen and understood. some try with
-            words, some try with writing, some try with art. this is my attempt to bridge that gap.
-        </p>
+  <main class="container">
+    <p class="lede">
+      so let's start with the question why?
+    </p>
+    <p class="lede">
+      here is an answer: i've always wanted to make a website. it is a must as an engineer.
+    </p>
+    <p class="lede">
+      here is a closer answer: i've always wanted to start a blog. it just seems like a fun idea.
+    </p>
+    <p class="lede">
+      here is an even closer answer: i feel that little epiphanies are a part of life. they come to us in the most
+      unexpected moments: they can be fun, they can be nuanced, they can change your entire outlook on life. so
+      wouldn't they be fun to share.
+    </p>
+    <p class="lede">
+      here is the closest answer: there are times in my life where I am hit with existential dread. it's the
+      moments when those you'd assume would understand don't and you realize how alone you are in the grand scheme
+      of the world. if you think about it, no one will every truly understand your feelings, your thoughts, the
+      way your mind works. yet we are social creatures forever seeking to be seen and understood. some try with
+      words, some try with writing, some try with art. this is my attempt to bridge that gap.
+    </p>
 
-        <h2>epiphanies</h2>
-        <div id="archive"></div>
+    <h2>epiphanies</h2>
+    <div id="archive"></div>
+  </main>
 
-    </main>
+  <footer class="site-footer container">
+    <small>© <span id="year"></span> Me</small>
 
+    <!-- Keep stories where it currently is (hidden gem menu) -->
+    <div class="gem" aria-label="hidden menu">
+      <button class="gem-btn" aria-haspopup="true" aria-label="Open hidden links" type="button">✧</button>
+      <nav class="gem-menu" aria-label="Hidden links">
+        <a href="stories.html">stories</a>
+      </nav>
+    </div>
+  </footer>
 
+  <script>
+    // Keyboard shortcuts (ignore typing in inputs)
+    document.addEventListener('keydown', (e) => {
+      if (/input|textarea|select/i.test(e.target.tagName)) return;
+      if (e.key.toLowerCase() === 's') location.href = 'stories.html';
+      if (e.key.toLowerCase() === 'p') location.href = 'prayers.html';
+    });
 
-    <footer class="site-footer container">
-        <small>© <span id="year"></span> Me</small>
-        <div class="gem" aria-label="hidden menu">
-            <button class="gem-btn" aria-haspopup="true" aria-label="Open hidden links">✧</button>
-            <nav class="gem-menu" aria-label="Hidden links">
-                <a href="stories.html">stories</a>
-                <a href="prayers.html">prayers</a>
-            </nav>
-        </div>
-    </footer>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <script>
-        // Footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
+    (async function () {
+      const res = await fetch('posts.json', { cache: 'no-store' });
+      const posts = await res.json();
 
-        (async function () {
-            const res = await fetch('posts.json', { cache: 'no-store' });
-            const posts = await res.json();
+      // Sort newest first using ISO string (safe)
+      posts.sort((a, b) => b.date.localeCompare(a.date));
 
-            // Sort newest first using ISO string (safe)
-            posts.sort((a, b) => b.date.localeCompare(a.date));
+      // Group by Year -> Month from the ISO string
+      const groups = {};
+      for (const p of posts) {
+        const [y, m] = String(p.date).trim().slice(0, 10).split('-'); // ["2025","09","03"]
+        (groups[y] ||= {})[m] ||= [];
+        groups[y][m].push(p);
+      }
 
-            // Group by Year -> Month from the ISO string
-            const groups = {};
-            for (const p of posts) {
-                const [y, m] = String(p.date).trim().slice(0, 10).split('-'); // ["2025","09","03"]
-                (groups[y] ||= {})[m] ||= [];
-                groups[y][m].push(p);
-            }
+      const root = document.getElementById('archive');
+      const years = Object.keys(groups).sort((a, b) => b.localeCompare(a));
 
-            const root = document.getElementById('archive');
-            const years = Object.keys(groups).sort((a, b) => b.localeCompare(a));
+      for (const year of years) {
+        const section = document.createElement('section');
+        section.innerHTML = `<h2>${year}</h2>`;
 
-            for (const year of years) {
-                const section = document.createElement('section');
-                section.innerHTML = `<h2>${year}</h2>`;
+        const months = Object.keys(groups[year]).sort((a, b) => b.localeCompare(a)); // "12".."01"
+        for (const month of months) {
+          // Month name via local constructor (no UTC shift)
+          const monthName = new Date(Number(year), Number(month) - 1, 1)
+            .toLocaleString(undefined, { month: 'long' });
 
-                const months = Object.keys(groups[year]).sort((a, b) => b.localeCompare(a)); // "12".."01"
-                for (const month of months) {
-                    // Month name via local constructor (no UTC shift)
-                    const monthName = new Date(Number(year), Number(month) - 1, 1)
-                        .toLocaleString(undefined, { month: 'long' });
+          const listItems = groups[year][month].map(p => {
+            // Pretty label via local constructor (no UTC shift)
+            const [yy, mm, dd] = p.date.split('-');
+            const pretty = new Date(Number(yy), Number(mm) - 1, Number(dd))
+              .toLocaleDateString(undefined, { month: 'short', day: '2-digit' });
 
-                    const listItems = groups[year][month].map(p => {
-                        // Pretty label via local constructor (no UTC shift)
-                        const [yy, mm, dd] = p.date.split('-');
-                        const pretty = new Date(Number(yy), Number(mm) - 1, Number(dd))
-                            .toLocaleDateString(undefined, { month: 'short', day: '2-digit' });
+            return `<li><a href="${p.path}">${pretty} — ${p.title}</a></li>`;
+          }).join('');
 
-                        return `<li><a href="${p.path}">${pretty} — ${p.title}</a></li>`;
-                    }).join('');
+          section.insertAdjacentHTML('beforeend', `
+            <h3 id="${year}-${month}">${monthName}</h3>
+            <ul class="post-list">${listItems}</ul>
+          `);
+        }
 
-                    section.insertAdjacentHTML('beforeend', `
-          <h3 id="${year}-${month}">${monthName}</h3>
-          <ul class="post-list">${listItems}</ul>
-        `);
-                }
-
-                root.appendChild(section);
-            }
-        })();
-    </script>
+        root.appendChild(section);
+      }
+    })();
+  </script>
 
 </body>
 

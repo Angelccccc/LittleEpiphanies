@@ -76,3 +76,25 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 .gem-footer .gem-menu { bottom: 2.1em; right: 0; top: auto; }
 
 @media (max-width: 480px) { .gem-fixed { bottom: 12px; right: 12px; } }
+
+.top-nav{
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.top-nav a{
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.top-nav a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.top-nav a.active{
+  opacity: 1;
+  text-decoration: underline;
+}
