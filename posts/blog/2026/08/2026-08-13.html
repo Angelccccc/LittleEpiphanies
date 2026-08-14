@@ -1,36 +1,112 @@
-<main class="container journal-entry">
+```html
+<!doctype html>
+<html lang="en">
 
-    <p class="journal-date">August 13, 2026</p>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <h2>On being alone</h2>
+    <title>On being alone — little epiphanies</title>
 
-    <p>
-        There are moments when I realize that no one will ever
-        completely understand me.
-    </p>
+    <link rel="stylesheet" href="../../../../style.css" />
 
-    <p>
-        Not because they don't care. Not because they aren't
-        listening. But because there is an entire interior world
-        inside every person that can never be fully translated
-        into words.
-    </p>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet"
+    />
 
-    <p>
-        And somehow, that thought is both terrifying and comforting.
-    </p>
+    <meta
+        name="description"
+        content="A little epiphany about being alone and being understood."
+    />
+</head>
 
-    <p>
-        Maybe being understood was never supposed to mean being
-        understood completely.
-    </p>
+<body>
 
-    <p>
-        Maybe it just means finding someone willing to keep trying.
-    </p>
+    <header class="site-header">
 
-    <p class="journal-back">
-        <a href="../index.html">← back to epiphanies</a>
-    </p>
+        <h1>
+            <a href="../../../../index.html">
+                little epiphanies
+            </a>
+        </h1>
 
-</main>
+        <p class="tagline">
+            notes & small epiphanies
+        </p>
+
+        <nav class="top-nav" aria-label="Page switcher">
+            <a href="../../../../index.html">
+                epiphanies
+            </a>
+
+            <span class="nav-sep" aria-hidden="true"></span>
+
+            <a href="../../../../prayers.html">
+                prayers
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main class="container journal-entry">
+
+        <p class="journal-date">
+            August 13, 2026
+        </p>
+
+        <h2>
+            On being alone
+        </h2>
+
+        <p>
+            There are moments when I realize that no one will ever
+            completely understand me.
+        </p>
+
+        <p>
+            Not because they don't care. Not because they aren't
+            listening. But because there is an entire interior world
+            inside every person that can never be fully translated
+            into words.
+        </p>
+
+        <p>
+            And somehow, that thought is both terrifying and comforting.
+        </p>
+
+        <p>
+            Maybe being understood was never supposed to mean being
+            understood completely.
+        </p>
+
+        <p>
+            Maybe it just means finding someone willing to keep trying.
+        </p>
+
+        <p class="journal-back">
+            <a href="../../../../index.html">
+                ← back to epiphanies
+            </a>
+        </p>
+
+    </main>
+
+
+    <footer class="site-footer container">
+        <small>
+            © <span id="year"></span> Me
+        </small>
+    </footer>
+
+
+    <script>
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
+```

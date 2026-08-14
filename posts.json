@@ -1,5 +1,10 @@
 [
   {
+    "title": "On being alone",
+    "date": "2026-08-13",
+    "path": "posts/blog/2026/08/2026-08-13.html"
+  }
+  {
     "title": "A tiny first post",
     "date": "2025-08-27",
     "path": "posts/blog/2025/08/2025-08-27.html"
@@ -13,10 +18,5 @@
     "title": "another month",
     "date": "2025-09-01",
     "path": "posts/blog/2025/09/2025-09-01.html"
-  }
-  {
-    "title": "new starts",
-    "date": "2026-08-13",
-    "path": "posts/blog/2026/08/2026-08-13.html"
   }
 ]

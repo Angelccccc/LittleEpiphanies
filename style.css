@@ -5,80 +5,229 @@
   --line: #eee;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: #fff; color: var(--text); }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--text);
+}
 
 body {
   font: 16px/1.6 'Inter', sans-serif;
   color: var(--text);
 }
 
-.container { max-width: var(--maxw); padding: 24px; margin: 0 auto; }
+.container {
+  max-width: var(--maxw);
+  padding: 24px;
+  margin: 0 auto;
+}
 
-.site-header { border-bottom: 1px solid var(--line); padding: 32px 24px; text-align: center; }
-.site-header h1 { margin: 0 0 8px; font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; }
-.tagline { margin: 0; color: var(--muted); }
-.lede {margin: 12px 0 24px; color: var(--muted);font-size: 1.05rem; max-width: 60ch;   }   /* comfortable line length */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 32px 24px;
+  text-align: center;
+}
 
-.site-footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); }
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
-h1, h2, h3 {
+.tagline {
+  margin: 0;
+  color: var(--muted);
+}
+
+.lede {
+  margin: 12px 0 24px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+/* comfortable line length */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
-h1 { font-size: 2rem; margin: 1.5rem 0 0.5rem; }
-h2 { font-size: 1.5rem; margin: 1.25rem 0 0.5rem; }
-h3 { font-size: 1.125rem; margin: 1rem 0 0.5rem; }
+h1 {
+  font-size: 2rem;
+  margin: 1.5rem 0 0.5rem;
+}
 
-p  { margin: 0.75rem 0; }
+h2 {
+  font-size: 1.5rem;
+  margin: 1.25rem 0 0.5rem;
+}
 
-.post-list { list-style: none; padding: 0; margin: 0.5rem 0 2rem; }
-.post-list li { padding: 8px 0; }
-.post-list a { text-decoration: none; color: inherit; }
-.post-list a:hover { text-decoration: underline; }
+h3 {
+  font-size: 1.125rem;
+  margin: 1rem 0 0.5rem;
+}
 
-.post header { margin-bottom: 1rem; }
-.post time { color: var(--muted); }
-.post img, .post video { max-width: 100%; height: auto; border-radius: 6px; }
-blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--line); color: var(--muted); }
-code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-radius: 6px; overflow: auto; }
+p {
+  margin: 0.75rem 0;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 2rem;
+}
+
+.post-list li {
+  padding: 8px 0;
+}
+
+.post-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+}
+
+.post header {
+  margin-bottom: 1rem;
+}
+
+.post time {
+  color: var(--muted);
+}
+
+.post img,
+.post video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+pre {
+  background: #fafafa;
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+}
 
 /* Base hidden-gem styles (keep these) */
-.gem { position: relative; display: inline-block; }
-.gem-btn {
-  background: none; border: 0; padding: 2px 6px; cursor: pointer;
-  color: var(--muted); opacity: .45; border-radius: 8px; font: inherit;
+.gem {
+  position: relative;
+  display: inline-block;
 }
-.gem-btn:hover, .gem-btn:focus { opacity: .95; outline: 1px dashed var(--line); }
+
+.gem-btn {
+  background: none;
+  border: 0;
+  padding: 2px 6px;
+  cursor: pointer;
+  color: var(--muted);
+  opacity: .45;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.gem-btn:hover,
+.gem-btn:focus {
+  opacity: .95;
+  outline: 1px dashed var(--line);
+}
 
 .gem-menu {
   position: absolute;
-  background: #fff; border: 1px solid var(--line);
-  box-shadow: 0 8px 30px rgba(0,0,0,.08);
-  border-radius: 12px; padding: 8px 10px;
-  display: flex; flex-direction: column; gap: 6px;
-  opacity: 0; pointer-events: none; transform: translateY(-4px);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
   transition: opacity .15s ease, transform .15s ease;
 }
-.gem:hover .gem-menu, .gem:focus-within .gem-menu {
-  opacity: 1; pointer-events: auto; transform: translateY(0);
+
+.gem:hover .gem-menu,
+.gem:focus-within .gem-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
-.gem-menu a { text-decoration: none; color: inherit; font-size: .95rem; padding: 2px 4px; }
-.gem-menu a:hover, .gem-menu a:focus { text-decoration: underline; }
+
+.gem-menu a {
+  text-decoration: none;
+  color: inherit;
+  font-size: .95rem;
+  padding: 2px 4px;
+}
+
+.gem-menu a:hover,
+.gem-menu a:focus {
+  text-decoration: underline;
+}
 
 
 /* OPTION B: tucked inside the FOOTER */
-.site-footer { position: relative; }
-.gem-footer { position: absolute; right: 12px; bottom: 12px; }
-.gem-footer .gem-menu { bottom: 2.1em; right: 0; top: auto; }
+.site-footer {
+  position: relative;
+}
 
-@media (max-width: 480px) { .gem-fixed { bottom: 12px; right: 12px; } }
+.gem-footer {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+.gem-footer .gem-menu {
+  bottom: 2.1em;
+  right: 0;
+  top: auto;
+}
+
+@media (max-width: 480px) {
+  .gem-fixed {
+    bottom: 12px;
+    right: 12px;
+  }
+}
 
 
-.top-nav{
+.top-nav {
   margin-top: 1.25rem;
 
   display: grid;
@@ -87,7 +236,8 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
   align-items: center;
 
   width: 100%;
-  max-width: 22rem;   /* tweak if you want more/less spread */
+  max-width: 22rem;
+  /* tweak if you want more/less spread */
   margin-left: auto;
   margin-right: auto;
 
@@ -97,7 +247,7 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
 }
 
 .top-nav a,
-.top-nav a:visited{
+.top-nav a:visited {
   color: inherit;
   text-decoration: none;
   padding: 0.15rem 0;
@@ -105,50 +255,88 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
   transition: border-color 120ms ease, color 120ms ease;
 }
 
-.top-nav a:hover{
+.top-nav a:hover {
   color: #111;
   border-bottom-color: currentColor;
 }
 
-.top-nav a[aria-current="page"]{
+.top-nav a[aria-current="page"] {
   color: #111;
   border-bottom-color: currentColor;
 }
 
-.nav-left{ justify-self: end; }
-.nav-right{ justify-self: start; }
+.nav-left {
+  justify-self: end;
+}
 
-.nav-sep{
+.nav-right {
+  justify-self: start;
+}
+
+.nav-sep {
   width: 1px;
   height: 1.05em;
   background: #ddd;
 }
 
+/* =========================
+   Journal entries
+   ========================= */
+
 .journal-entry {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: left;
+  max-width: 680px;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
 }
 
+/* Date */
+
 .journal-date {
-  text-align: center;
-  font-size: 0.85rem;
-  opacity: 0.55;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #888;
   margin-bottom: 0.75rem;
 }
 
+/* Title */
+
 .journal-entry h2 {
-  text-align: center;
-  margin-bottom: 3rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 2.5rem;
+  color: #111;
 }
+
+/* Body */
 
 .journal-entry p:not(.journal-date):not(.journal-back) {
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #444;
+
+  margin: 0 0 1.5rem;
 }
 
+/* Back link */
+
 .journal-back {
-  text-align: center;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 0.9rem;
+}
+
+.journal-back a,
+.journal-back a:visited {
+  color: #666;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+}
+
+.journal-back a:hover {
+  color: #111;
+  border-bottom-color: #111;
 }
