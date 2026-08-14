@@ -1,43 +1,81 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>A tiny first post — Aug 27, 2025</title>
+
+  <title>On being alone — little epiphanies</title>
+
   <link rel="stylesheet" href="../style.css" />
-  <meta name="description" content="A short note about starting the blog." />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body>
+
   <header class="site-header">
-    <h1><a href="../index.html" style="text-decoration:none; color:inherit;">My Simple Blog</a></h1>
+    <h1>little epiphanies</h1>
     <p class="tagline">notes & small epiphanies</p>
+
+    <nav class="top-nav" aria-label="Page switcher">
+      <a class="nav-left" href="../index.html">epiphanies</a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-right" href="../prayers.html">prayers</a>
+    </nav>
   </header>
 
+
   <main class="container post">
-    <header>
-      <h1>A tiny first post</h1>
-      <p><time datetime="2025-08-27">Aug 27, 2025</time></p>
-    </header>
 
-    <article>
-      <p>Welcome! This is a super minimal blog—plain HTML, a single CSS file, no build tools.</p>
+    <p class="post-date">August 13, 2026</p>
 
-      <h2>Smaller header example</h2>
-      <p>Here’s a paragraph showing the default spacing and line length.</p>
+    <h2>On being alone</h2>
 
-      <h3>Even smaller header</h3>
-      <p>You can include images and code blocks too.</p>
+    <p>
+      There are moments when I realize that no one will ever
+      completely understand me.
+    </p>
 
-      <pre><code>// code sample
-function hello() {
-  console.log("hi");
-}
-</code></pre>
-    </article>
+    <p>
+      Not because they don't care. Not because they aren't
+      listening. But because there is an entire interior world
+      inside every person that can never be fully translated
+      into words.
+    </p>
+
+    <p>
+      And somehow, that thought is both terrifying and comforting.
+    </p>
+
+    <p>
+      Maybe being understood was never supposed to mean being
+      understood completely.
+    </p>
+
+    <p>
+      Maybe it just means finding someone willing to keep trying.
+    </p>
+
+    <p class="post-back">
+      <a href="../index.html">← back to epiphanies</a>
+    </p>
+
   </main>
 
+
   <footer class="site-footer container">
-    <small><a href="../index.html">← Back to all posts</a></small>
+    <small>© <span id="year"></span> Me</small>
   </footer>
+
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
+
 </html>
