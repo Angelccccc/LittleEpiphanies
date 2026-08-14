@@ -124,3 +124,31 @@ pre { background: #fafafa; border: 1px solid var(--line); padding: 12px; border-
   background: #ddd;
 }
 
+.journal-entry {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.journal-date {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.55;
+  margin-bottom: 0.75rem;
+}
+
+.journal-entry h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.journal-entry p:not(.journal-date):not(.journal-back) {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.journal-back {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
